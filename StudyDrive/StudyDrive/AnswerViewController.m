@@ -74,7 +74,7 @@
         }
         _answerScrollView = [[AnswerScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64-60) withDataArray:arr];
         
-    }else if(_type==5){
+    }else if(_type==5){     //全真模拟
         NSMutableArray *temArr = [[NSMutableArray alloc]init];
         NSArray *array = [MyDataManager getData:answer];
         NSMutableArray *dataArray = [[NSMutableArray alloc]init];
@@ -106,6 +106,7 @@
     itemRight.title = @"交卷";
     [itemRight setTarget:self];
     [itemRight setAction:@selector(clickRightItem)];
+    self.navigationItem.rightBarButtonItem = itemRight;
 }
 
 -(void)clickRightItem

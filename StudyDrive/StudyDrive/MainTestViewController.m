@@ -7,6 +7,7 @@
 //
 
 #import "MainTestViewController.h"
+#import "AnswerViewController.h"
 
 @interface MainTestViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *button1;
@@ -16,6 +17,22 @@
 
 @implementation MainTestViewController
 - (IBAction)clickBtn:(UIButton *)sender {
+    switch (sender.tag) {
+        case 201:
+        {
+            AnswerViewController *con = [[AnswerViewController alloc]init];
+            con.type = 5;
+            [self.navigationController pushViewController:con animated:YES];
+        }
+            break;
+        case 202:
+        {
+            
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)viewDidLoad {
