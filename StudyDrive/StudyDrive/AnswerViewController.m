@@ -111,14 +111,48 @@
 
 -(void)clickRightItem
 {
-    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"时间还多，确定要离开考试吗？" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"我要交卷", nil];
-    [alert show];
+    //创建弹出框
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"时间还多，确定要离开考试吗？" preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    //创建确定按钮
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"我要交卷" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"注意学习");
+    }];
+    
+    //创建取消按钮
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"不，谢谢" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"注意学习");
+    }];
+    
+    //将按钮添加到UIAlertController对象上
+    [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    
+    // 将UIAlertController模态出来
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 -(void)clickNavBtnReturn
 {
-    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"时间还多，确定要离开考试吗？" delegate:self cancelButtonTitle:@"不，谢谢" otherButtonTitles:@"我要离开", nil];
-    [alert show];
+    //创建弹出框
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"时间还多，确定要离开考试吗？" preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    //创建确定按钮
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"我要交卷" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"注意学习");
+    }];
+    
+    //创建取消按钮
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"不，谢谢" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"注意学习");
+    }];
+    
+    //将按钮添加到UIAlertController对象上
+    [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    
+    // 将UIAlertController模态出来
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
